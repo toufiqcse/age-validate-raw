@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Card</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light container">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Age Checker</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="#">Age</a>
+              <a class="nav-link" href="#">Adult</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container" style="margin: 30px auto">
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <div class="card">
+            <h5 class="card-header">Age Calculator</h5>
+            <div class="card-body">
+              <h5 class="card-title">You are Adult or Child ??</h5>
+              <p class="card-text">
+                With supporting text below as a natural lead-in to additional
+                content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xs-12">
+          <label for="validationServer03" class="form-label">Input Age</label>
+          <form onsubmit="return validateForm()">
+            <input
+              type="number"
+              class="form-control"
+              id="validationServer03"
+              aria-describedby="validationServer03Feedback"
+              required
+              placeholder="Input Age"
+            />
+
+            <button
+              style="margin-top: 10px"
+              type="submit"
+              class="btn btn-primary"
+            >
+              Submit
+            </button>
+            <div id="feedbackDisplay" class="" style="color: red"></div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <section class="container" style="margin: 30px auto"></section>
+    <footer class="container p-2 text-center">
+      <p class="" style="margin: 10px auto; text-align: center;"">
+        All right reserved @2024
+      </p>
+    </footer>
+    <script>
+      function validateForm() {
+        var ageInput = document.getElementById("validationServer03").value;
+        console.log(ageInput);
+        var feedbackDisplayElement = document.getElementById("feedbackDisplay");
+
+        if (ageInput === "" || isNaN(ageInput) || ageInput < 0) {
+          feedbackDisplayElement.textContent = "Please enter a valid age.";
+          console.log("Please enter a valid age.");
+          return false; // Prevent form submission
+        }
+        ageInputs = parseInt(ageInput);
+        if (ageInputs >= 18) {
+          feedbackDisplayElement.textContent = "You are an Adult";
+          console.log("adult");
+          return false;
+        } else {
+          feedbackDisplayElement.textContent = "You are Child.";
+          console.log("You are a child");
+          return false;
+        }
+        // document.getElementById("validationServer03").value = ""; // Resetting the form
+        console.log("Form submitted and reset.");
+        return false; // Prevent form submission
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
